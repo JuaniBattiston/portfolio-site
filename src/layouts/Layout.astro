@@ -1,0 +1,53 @@
+---
+import '@fontsource/poppins';
+
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en" class="bg-slate-900">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<script src="https://kit.fontawesome.com/95c085f604.js" crossorigin="anonymous"></script>
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body class="h-screen">
+		<slot />
+	</body>
+</html>
+<style is:global>
+	.gradient-text {
+		background: linear-gradient(to right, #2563eb, #67e8f9, #818cf8,#67e8f9, #2563eb, #67e8f9, #818cf8);
+		background-size: 300% 300%;
+		background-clip: text;
+		animation: gradient 14s linear infinite;
+	}
+	@keyframes gradient {
+		0% {
+			background-position: 0% 50%;
+		}
+		100% {
+			background-position: 100% 50%;
+		}
+	}
+
+	
+
+	.gradient-button:hover {
+		transform: translate(-5px, -5px);
+		box-shadow: #437bf3 5px 5px 0px;
+		background: linear-gradient(to right, #67e8f9, #818cf8,#67e8f9,#818cf8);
+		background-size: 300% 300%;
+		animation: gradient 10s linear infinite;
+	}
+
+
+</style>
