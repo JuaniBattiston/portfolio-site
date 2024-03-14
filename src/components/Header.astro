@@ -2,33 +2,33 @@
 	<nav class="flex flex-wrap items-center justify-center pt-9 px-12">
 		<ul class="flex space-x-9 font-bold">
 			<li>
-				<span class="text-cyan-400 text-medium font-bold drop-shadow-[0_1px_1px_rgba(103,232,249,0.3)] font-pixelify-var">01. </span><a href="#work" class="text-white font-bold">Work</a>
+				<span class="text-cyan-400 text-medium font-bold drop-shadow-[0_1px_1px_rgba(103,232,249,0.3)] font-pixelify-var">01. </span><a href="#work" class="text-white font-bold hover:bg-gradient-to-r hover:from-blue-600 hover:via-cyan-300 hover:to-indigo-300 hover:bg-clip-text hover:text-transparent py-1 px-2 rounded-lg transition duration-200">Work</a>
 			</li>
 			<li>
-				<span class="text-cyan-400 text-medium font-bold drop-shadow-[0_1px_1px_rgba(103,232,249,0.3)] font-pixelify-var">02. </span><a href="/about" class="text-white">Projects</a>
+				<span class="text-cyan-400 text-medium font-bold drop-shadow-[0_1px_1px_rgba(103,232,249,0.3)] font-pixelify-var">02. </span><a href="#projects" class="text-white font-bold hover:bg-gradient-to-r hover:from-blue-600 hover:via-cyan-300 hover:to-indigo-300 hover:bg-clip-text hover:text-transparent py-1 px-2 rounded-lg transition duration-200">Projects</a>
 			</li>
 			<li>
-				<span class="text-cyan-400 text-medium font-bold drop-shadow-[0_1px_1px_rgba(103,232,249,0.3)] font-pixelify-var">03. </span><a href="/blog" class="text-white">About</a>
+				<span class="text-cyan-400 text-medium font-bold drop-shadow-[0_1px_1px_rgba(103,232,249,0.3)] font-pixelify-var">03. </span><a href="#about" class="text-white font-bold hover:bg-gradient-to-r hover:from-blue-600 hover:via-cyan-300 hover:to-indigo-300 hover:bg-clip-text hover:text-transparent py-1 px-2 rounded-lg transition duration-200">About</a>
 			</li>
 			<li>
-				<span class="text-cyan-400 text-medium font-bold drop-shadow-[0_1px_1px_rgba(103,232,249,0.3)] font-pixelify-var">04. </span><a href="/contact" class="text-white">Contact</a>
+				<span class="text-cyan-400 text-medium font-bold drop-shadow-[0_1px_1px_rgba(103,232,249,0.3)] font-pixelify-var">04. </span><a href="#contact" class="text-white font-bold hover:bg-gradient-to-r hover:from-blue-600 hover:via-cyan-300 hover:to-indigo-300 hover:bg-clip-text hover:text-transparent py-1 px-2 rounded-lg transition duration-200">Contact</a>
 			</li>
 		</ul>
 	</nav>
 	<script>
 		document.addEventListener("DOMContentLoaded", function() {
-		var navLinks = document.querySelectorAll('nav a');
+		const navLinks = document.querySelectorAll('nav a');
 		
 		navLinks.forEach(function(navLink) {
-			navLink.addEventListener('click', function(e) {
-				e.preventDefault(); // Prevent the default behavior of anchor links
-				var targetId = this.getAttribute('href');
-				var targetElement = document.querySelector(targetId);
+			navLink.addEventListener('click', function(this: HTMLElement, e: Event) {
+				e.preventDefault();
+				const targetId = (navLink as HTMLAnchorElement).getAttribute('href');
+				const targetElement = document.querySelector(targetId!); // Use '!' to assert non-null
 				if (targetElement) {
-					var offsetTop = targetElement.offsetTop;
+					const offsetTop = (targetElement as HTMLElement).offsetTop;
 					window.scrollTo({
 						top: offsetTop,
-						behavior: 'smooth' // Smooth scrolling
+						behavior: 'smooth'
 					});
 				}
 			});
