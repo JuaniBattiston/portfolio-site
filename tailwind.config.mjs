@@ -2,7 +2,7 @@
 export default {
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
 	theme: {
-		fontFamily: {'pixelify-var': ['"Pixelify Sans Variable"', 'system-ui']},
+		fontFamily: {'inconsolata-var': ['"Inconsolata Variable"', 'monospace']},
 		extend: {},
 	},
 	plugins: [],
