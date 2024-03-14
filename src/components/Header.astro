@@ -2,7 +2,7 @@
 	<nav class="flex flex-wrap items-center justify-center pt-9 px-12">
 		<ul class="flex space-x-9 font-bold">
 			<li>
-				<span class="text-cyan-400 text-medium font-bold drop-shadow-[0_1px_1px_rgba(103,232,249,0.3)] font-pixelify-var">01. </span><a href="" class="text-white font-bold">Work</a>
+				<span class="text-cyan-400 text-medium font-bold drop-shadow-[0_1px_1px_rgba(103,232,249,0.3)] font-pixelify-var">01. </span><a href="#work" class="text-white font-bold">Work</a>
 			</li>
 			<li>
 				<span class="text-cyan-400 text-medium font-bold drop-shadow-[0_1px_1px_rgba(103,232,249,0.3)] font-pixelify-var">02. </span><a href="/about" class="text-white">Projects</a>
@@ -15,4 +15,24 @@
 			</li>
 		</ul>
 	</nav>
+	<script>
+		document.addEventListener("DOMContentLoaded", function() {
+		var navLinks = document.querySelectorAll('nav a');
+		
+		navLinks.forEach(function(navLink) {
+			navLink.addEventListener('click', function(e) {
+				e.preventDefault(); // Prevent the default behavior of anchor links
+				var targetId = this.getAttribute('href');
+				var targetElement = document.querySelector(targetId);
+				if (targetElement) {
+					var offsetTop = targetElement.offsetTop;
+					window.scrollTo({
+						top: offsetTop,
+						behavior: 'smooth' // Smooth scrolling
+					});
+				}
+			});
+		});
+	});
+	</script>
 </header>

@@ -41,8 +41,9 @@ const { title } = Astro.props;
 	}
 
 	.gradient-button:hover {
-		transform: translate(-5px, -5px);
-		box-shadow: #437bf3 5px 5px 0px;
+		transform: translate(-3.5px, -3.5px);
+		transition: transform 0.3s ease, box-shadow 0.3s ease;
+		box-shadow: #437bf3 3.5px 3.5px 0px;
 		background: linear-gradient(to right, #67e8f9, #818cf8,#67e8f9,#818cf8);
 		background-size: 300% 300%;
 		animation: gradient 10s linear infinite;
