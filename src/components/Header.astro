@@ -31,10 +31,13 @@
 			const burgerMenu = document.getElementById("burger-menu");
 			const navbar = document.getElementById("navbar-default");
 
-			burgerMenu.addEventListener("click", function() {
-			navbar.classList.toggle("hidden");
-			});
+			if (burgerMenu && navbar) {
+				burgerMenu.addEventListener("click", function() {
+					navbar.classList.toggle("hidden");
+				});
+			}
 		});
+
 
 		document.addEventListener("DOMContentLoaded", function() {
 		const navLinks = document.querySelectorAll('nav a');
