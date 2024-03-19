@@ -1,9 +1,15 @@
 <header>
-	<nav>
-		<div class="max-w-screen-xl flex flex-wrap items-center justify-center  mx-auto p-4">
-		  <div class="block w-auto pt-4" id="navbar-default">
-			<ul class="font-medium flex mt-4 border-0 flex-row sm:space-x-9 space-x-2 rtl:space-x-reverse bg-transparent">
-			  <li>
+	<nav class="relative px-4 py-4 flex justify-end items-center bg-transparent">
+		<div class="lg:hidden">
+			<button class="navbar-burger flex items-center text-cyan-400 p-3">
+				<svg class="block h-4 w-4 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+					<title>Mobile menu</title>
+					<path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
+				</svg>
+			</button>
+		</div>
+		<ul class="hidden absolute  pt-20 top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 lg:flex lg:mx-auto lg:flex lg:items-center lg:w-auto lg:space-x-6">	
+			<li>
 				<span class="text-cyan-400 text-medium font-bold drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)] font-inconsolata-var pr-1">01.</span><a href="#work" class="text-white font-bold hover:text-cyan-400 transition duration-300 ease-in-out drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)]">Work</a>
 			  </li>
 			  <li>
@@ -15,41 +21,77 @@
 			  <li>
 				<span class="text-cyan-400 text-medium font-bold drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)] font-inconsolata-var pr-1">04.</span><a href="#contact" class="text-white font-bold hover:text-cyan-400 transition duration-300 ease-in-out drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)]">Contact</a>
 			  </li>
-			</ul>
-		  </div>
-		</div>
-	  </nav>
-	
-	<script>
-		document.addEventListener("DOMContentLoaded", function() {
-			const burgerMenu = document.getElementById("burger-menu");
-			const navbar = document.getElementById("navbar-default");
-
-			if (burgerMenu && navbar) {
-				burgerMenu.addEventListener("click", function() {
-					navbar.classList.toggle("hidden");
-				});
-			}
-		});
-
-
-		document.addEventListener("DOMContentLoaded", function() {
-		const navLinks = document.querySelectorAll('nav a');
-		
-		navLinks.forEach(function(navLink) {
-			navLink.addEventListener('click', function(this: HTMLElement, e: Event) {
-				e.preventDefault();
-				const targetId = (navLink as HTMLAnchorElement).getAttribute('href');
-				const targetElement = document.querySelector(targetId!); // Use '!' to assert non-null
-				if (targetElement) {
-					const offsetTop = (targetElement as HTMLElement).offsetTop;
-					window.scrollTo({
-						top: offsetTop,
-						behavior: 'smooth'
-					});
-				}
-			});
-		});
-	});
-	</script>
+		</ul>
+	</nav>
+	<div class="navbar-menu relative z-50 hidden">
+		<div class="navbar-backdrop fixed inset-0 bg-gray-800 opacity-25"></div>
+		<nav class="fixed top-0 right-0 bottom-0 flex flex-col w-5/6 max-w-sm py-6 px-6 bg-slate-950 border-r overflow-y-auto">
+			<div class="flex items-center mb-8">
+				<button class="navbar-close">
+					<svg class="h-6 w-6 text-gray-400 cursor-pointer hover:text-gray-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+					</svg>
+				</button>
+			</div>
+			<div>
+				<ul>
+					<li>
+						<span class="text-cyan-400 text-medium font-bold drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)] font-inconsolata-var pr-1">01.</span><a href="#work" class="text-white font-bold hover:text-cyan-400 transition duration-300 ease-in-out drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)]">Work</a>
+					  </li>
+					  <li>
+						<span class="text-cyan-400 text-medium font-bold drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)] font-inconsolata-var pr-1">02.</span><a href="#projects" class="text-white font-bold hover:text-cyan-400 transition duration-300 ease-in-out drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)]">Projects</a>
+					  </li>
+					  <li>
+						<span class="text-cyan-400 text-medium font-bold drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)] font-inconsolata-var pr-1">03.</span><a href="#about" class="text-white font-bold hover:text-cyan-400 transition duration-300 ease-in-out drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)]">About</a>
+					  </li>
+					  <li>
+						<span class="text-cyan-400 text-medium font-bold drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)] font-inconsolata-var pr-1">04.</span><a href="#contact" class="text-white font-bold hover:text-cyan-400 transition duration-300 ease-in-out drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)]">Contact</a>
+					  </li>
+				</ul>
+			</div>
+		</nav>
+	</div>	
 </header>
+
+<script>
+// Burger menus
+document.addEventListener('DOMContentLoaded', function() {
+    // open
+    const burger = document.querySelectorAll('.navbar-burger');
+    const menu = document.querySelectorAll('.navbar-menu');
+
+    if (burger.length && menu.length) {
+        for (var i = 0; i < burger.length; i++) {
+            burger[i].addEventListener('click', function() {
+                for (var j = 0; j < menu.length; j++) {
+                    menu[j].classList.toggle('hidden');
+                }
+            });
+        }
+    }
+
+    // close
+    const close = document.querySelectorAll('.navbar-close');
+    const backdrop = document.querySelectorAll('.navbar-backdrop');
+
+    if (close.length) {
+        for (var i = 0; i < close.length; i++) {
+            close[i].addEventListener('click', function() {
+                for (var j = 0; j < menu.length; j++) {
+                    menu[j].classList.toggle('hidden');
+                }
+            });
+        }
+    }
+
+    if (backdrop.length) {
+        for (var i = 0; i < backdrop.length; i++) {
+            backdrop[i].addEventListener('click', function() {
+                for (var j = 0; j < menu.length; j++) {
+                    menu[j].classList.toggle('hidden');
+                }
+            });
+        }
+    }
+});
+</script>
