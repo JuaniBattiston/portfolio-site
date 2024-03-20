@@ -1,115 +1,152 @@
 <header>
-	<nav class="relative px-4 py-4 flex justify-end items-center bg-transparent">
-		<div class="lg:hidden">
-			<button class="navbar-burger flex items-center text-cyan-400 p-3">
-				<svg class="block h-4 w-4 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-					<title>Mobile menu</title>
-					<path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
-				</svg>
-			</button>
-		</div>
-		<ul class="hidden absolute  pt-20 top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 lg:flex lg:mx-auto lg:flex lg:items-center lg:w-auto lg:space-x-6">	
-			<li>
-				<span class="text-cyan-400 text-medium font-bold drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)] font-inconsolata-var pr-1">01.</span><a href="#work" class="text-white font-bold hover:text-cyan-400 transition duration-300 ease-in-out drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)]">Work</a>
-			  </li>
-			  <li>
-				<span class="text-cyan-400 text-medium font-bold drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)] font-inconsolata-var pr-1">02.</span><a href="#projects" class="text-white font-bold hover:text-cyan-400 transition duration-300 ease-in-out drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)]">Projects</a>
-			  </li>
-			  <li>
-				<span class="text-cyan-400 text-medium font-bold drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)] font-inconsolata-var pr-1">03.</span><a href="#about" class="text-white font-bold hover:text-cyan-400 transition duration-300 ease-in-out drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)]">About</a>
-			  </li>
-			  <li>
-				<span class="text-cyan-400 text-medium font-bold drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)] font-inconsolata-var pr-1">04.</span><a href="#contact" class="text-white font-bold hover:text-cyan-400 transition duration-300 ease-in-out drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)]">Contact</a>
-			  </li>
-		</ul>
-	</nav>
-	<div class="navbar-menu relative z-50 hidden">
-		<div class="navbar-backdrop fixed inset-0 bg-gray-800 opacity-25"></div>
-		<nav class="fixed top-0 right-0 bottom-0 flex flex-col w-5/6 max-w-sm py-6 px-6 bg-slate-950 border-r">
-			<div class="flex items-center justify-end mb-8">
-				<button class="navbar-close">
-					<svg class="h-6 w-6 text-gray-400 cursor-pointer hover:text-gray-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-					</svg>
-				</button>
-			</div>
-			<div class="flex flex-col items-center justify-center my-auto">
-				<ul>
-					<li class="py-11">
-						<span class="text-cyan-400 text-medium font-bold drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)] font-inconsolata-var pr-1">01.</span><a href="#work" class="text-white font-bold hover:text-cyan-400 transition duration-300 ease-in-out drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)]">Work</a>
-					</li>
-					<li class="py-11">
-						<span class="text-cyan-400 text-medium font-bold drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)] font-inconsolata-var pr-1">02.</span><a href="#projects" class="text-white font-bold hover:text-cyan-400 transition duration-300 ease-in-out drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)]">Projects</a>
-					</li>
-					<li class="py-11">
-						<span class="text-cyan-400 text-medium font-bold drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)] font-inconsolata-var pr-1">03.</span><a href="#about" class="text-white font-bold hover:text-cyan-400 transition duration-300 ease-in-out drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)]">About</a>
-					</li>
-					<li class="py-11">
-						<span class="text-cyan-400 text-medium font-bold drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)] font-inconsolata-var pr-1">04.</span><a href="#contact" class="text-white font-bold hover:text-cyan-400 transition duration-300 ease-in-out drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)]">Contact</a>
-					</li>
-				</ul>
-			</div>
-		</nav>
-	</div>	
+  <nav class="relative px-4 py-4 flex justify-end items-center bg-transparent">
+    <ul
+      class="hidden absolute pt-20 top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 md:flex md:mx-auto md:items-center md:w-auto md:space-x-6"
+    >
+      <li>
+        <span
+          class="text-cyan-400 text-medium font-bold drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)] font-inconsolata-var pr-1"
+          >01.</span
+        ><a
+          href="#work"
+          class="text-white font-bold hover:text-cyan-400 transition duration-300 ease-in-out drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)]"
+          >Work</a
+        >
+      </li>
+      <li>
+        <span
+          class="text-cyan-400 text-medium font-bold drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)] font-inconsolata-var pr-1"
+          >02.</span
+        ><a
+          href="#projects"
+          class="text-white font-bold hover:text-cyan-400 transition duration-300 ease-in-out drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)]"
+          >Projects</a
+        >
+      </li>
+      <li>
+        <span
+          class="text-cyan-400 text-medium font-bold drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)] font-inconsolata-var pr-1"
+          >03.</span
+        ><a
+          href="#about"
+          class="text-white font-bold hover:text-cyan-400 transition duration-300 ease-in-out drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)]"
+          >About</a
+        >
+      </li>
+      <li>
+        <span
+          class="text-cyan-400 text-medium font-bold drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)] font-inconsolata-var pr-1"
+          >04.</span
+        ><a
+          href="#contact"
+          class="text-white font-bold hover:text-cyan-400 transition duration-300 ease-in-out drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)]"
+          >Contact</a
+        >
+      </li>
+    </ul>
+  </nav>
+  <nav x-init="navigationOpen = false;">
+    <div
+      class="flex justify-end items-center fixed top-0 right-0 py-4 px-4 z-30"
+    >
+      <button
+        class="flex items-center text-cyan-400 p-3 md:hidden"
+        @click="navigationOpen = !navigationOpen"
+      >
+        <svg
+          class="block h-4 w-4 fill-current"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <title>Mobile menu</title>
+          <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
+        </svg>
+      </button>
+      <div
+        id="mobile-nav"
+        class="fixed top-0 right-0 bottom-0 flex flex-col w-5/6 max-w-sm py-6 px-6 z-30 bg-slate-900 transform transition-all duration-300"
+        @click.away="navigationOpen = false"
+        x-show="navigationOpen"
+        x-transition:enter-start="opacity-0 lg:scale-75"
+        x-transition:enter-end="opacity-100 lg:scale-100"
+        x-transition:leave-start="opacity-100 lg:scale-100"
+        x-transition:leave-end="opacity-0 lg:scale-75"
+        :hidden="!navigationOpen"
+      >
+        <div class="flex items-center justify-end">
+          <button
+            class="navbar-close"
+            @click="navigationOpen = !navigationOpen"
+          >
+            <svg
+              class="h-6 w-6 text-cyan-400"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+        <ul class="flex flex-col mx-auto my-auto">
+          <li class="py-6 flex flex-col items-center justify-center mx-auto">
+            <span
+              class="text-cyan-400 text-xl font-bold drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)] font-inconsolata-var"
+              >01.</span
+            >
+            <a
+              href="#work"
+              class="text-white text-xl text-medium hover:text-cyan-400 transition duration-300 ease-in-out hover:drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)]"
+              >Work</a
+            >
+          </li>
+          <li class="py-6 flex flex-col items-center justify-center mx-auto">
+            <span
+              class="text-cyan-400 text-xl font-bold drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)] font-inconsolata-var"
+              >02.</span
+            ><a
+              href="#projects"
+              class="text-white text-xl text-medium hover:text-cyan-400 transition duration-300 ease-in-out hover:drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)]"
+              >Projects</a
+            >
+          </li>
+          <li class="py-6 flex flex-col items-center justify-center mx-auto">
+            <span
+              class="text-cyan-400 text-xl font-bold drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)] font-inconsolata-var"
+              >03.</span
+            ><a
+              href="#about"
+              class="text-white text-xl text-medium hover:text-cyan-400 transition duration-300 ease-in-out hover:drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)]"
+              >About</a
+            >
+          </li>
+          <li class="py-6 flex flex-col items-center justify-center mx-auto">
+            <span
+              class="text-cyan-400 text-xl font-bold drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)] font-inconsolata-var"
+              >04.</span
+            ><a
+              href="#contact"
+              class="text-white text-xl text-medium hover:text-cyan-400 transition duration-300 ease-in-out hover:drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)]"
+              >Contact</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div
+      class="backdrop fixed top-0 left-0 w-full h-full backdrop-blur-[3px] z-[29] pointer-events-none transform transition-all duration-300"
+      x-show="navigationOpen"
+      x-transition:enter-start="opacity-0 lg:scale-75"
+      x-transition:enter-end="opacity-100 lg:scale-100"
+      x-transition:leave-start="opacity-100 lg:scale-100"
+      x-transition:leave-end="opacity-0 lg:scale-75"
+      :hidden="!navigationOpen"
+    >
+    </div>
+  </nav>
 </header>
-
-<script>
-	document.addEventListener('DOMContentLoaded', function() {
-		const burger = document.querySelectorAll('.navbar-burger');
-		const menu = document.querySelectorAll('.navbar-menu');
-		const body = document.querySelector('body');
-	
-		if (burger.length && menu.length && body) {
-			for (var i = 0; i < burger.length; i++) {
-				burger[i].addEventListener('click', function() {
-					for (var j = 0; j < menu.length; j++) {
-						menu[j].classList.toggle('hidden');
-						menu[j].classList.toggle('menu-open');
-					}
-					body.classList.toggle('menu-open');
-				});
-			}
-		}
-	
-	
-		const close = document.querySelectorAll('.navbar-close');
-		const backdrop = document.querySelectorAll('.navbar-backdrop');
-	
-		if (close.length && body) {
-			for (var i = 0; i < close.length; i++) {
-				close[i].addEventListener('click', function() {
-					for (var j = 0; j < menu.length; j++) {
-						menu[j].classList.toggle('hidden');
-					}
-					body.classList.remove('menu-open');
-				});
-			}
-		}
-	
-		if (backdrop.length && body) {
-			for (var i = 0; i < backdrop.length; i++) {
-				backdrop[i].addEventListener('click', function() {
-					for (var j = 0; j < menu.length; j++) {
-						menu[j].classList.toggle('hidden');
-					}
-					body.classList.remove('menu-open');
-				});
-			}
-		}
-	
-		const navLinks = document.querySelectorAll('.navbar-menu a');
-	
-		if (navLinks.length) {
-			for (var i = 0; i < navLinks.length; i++) {
-				navLinks[i].addEventListener('click', function() {
-					for (var j = 0; j < menu.length; j++) {
-						menu[j].classList.add('hidden');
-					}
-					if (body) {
-						body.classList.remove('menu-open');
-					}
-				});
-			}
-		}
-	});
-	</script>
