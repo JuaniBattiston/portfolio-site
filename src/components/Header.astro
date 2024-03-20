@@ -1,11 +1,11 @@
 <header>
-  <nav class="relative px-4 py-4 flex justify-end items-center bg-transparent">
+  <nav class="relative pt-6 flex justify-end items-center bg-transparent">
     <ul
-      class="hidden absolute pt-20 top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 md:flex md:mx-auto md:items-center md:w-auto md:space-x-6"
+      class="hidden md:flex md:mx-auto md:items-center md:w-auto md:space-x-6"
     >
       <li>
         <span
-          class="text-cyan-400 text-medium font-bold drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)] font-inconsolata-var pr-1"
+          class="text-cyan-400 font-bold drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)] font-inconsolata-var pr-1"
           >01.</span
         ><a
           href="#work"
@@ -45,13 +45,17 @@
       </li>
     </ul>
   </nav>
-  <nav x-data="{ navigationOpen: false }" x-init="navigationOpen = false;">
+  <nav
+    x-data="{ navigationOpen: false }"
+    x-init="navigationOpen = false;"
+    x-cloak
+  >
     <div
-      class="flex justify-end items-center fixed top-0 right-0 py-4 px-4 z-30"
+      class="flex justify-end items-center absolute top-0 right-0 py-4 px-4 z-30"
     >
       <button
         class="flex items-center text-cyan-400 p-3 md:hidden"
-        @click="navigationOpen = !navigationOpen"
+        @click="navigationOpen = !navigationOpen;"
       >
         <svg
           class="block h-4 w-4 fill-current"
@@ -102,7 +106,7 @@
             <a
               href="#work"
               class="text-white text-xl text-medium hover:text-cyan-400 transition duration-300 ease-in-out hover:drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)]"
-              >Work</a
+              @click="navigationOpen = !navigationOpen">Work</a
             >
           </li>
           <li class="py-6 flex flex-col items-center justify-center mx-auto">
@@ -112,7 +116,7 @@
             ><a
               href="#projects"
               class="text-white text-xl text-medium hover:text-cyan-400 transition duration-300 ease-in-out hover:drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)]"
-              >Projects</a
+              @click="navigationOpen = !navigationOpen">Projects</a
             >
           </li>
           <li class="py-6 flex flex-col items-center justify-center mx-auto">
@@ -122,7 +126,7 @@
             ><a
               href="#about"
               class="text-white text-xl text-medium hover:text-cyan-400 transition duration-300 ease-in-out hover:drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)]"
-              >About</a
+              @click="navigationOpen = !navigationOpen">About</a
             >
           </li>
           <li class="py-6 flex flex-col items-center justify-center mx-auto">
@@ -132,7 +136,7 @@
             ><a
               href="#contact"
               class="text-white text-xl text-medium hover:text-cyan-400 transition duration-300 ease-in-out hover:drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)]"
-              >Contact</a
+              @click="navigationOpen = !navigationOpen">Contact</a
             >
           </li>
         </ul>
