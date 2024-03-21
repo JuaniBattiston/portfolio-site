@@ -68,4 +68,18 @@ const { title } = Astro.props;
     background-size: 300% 300%;
     animation: gradient 10s linear infinite;
   }
+
+  .gradient-tag {
+    background: linear-gradient(to right, #67e8f9, #818cf8, #67e8f9, #818cf8);
+    background-size: 300% 300%;
+    animation: gradient 10s linear infinite;
+  }
+
+  .gradient-tag:hover {
+    transform: translate(-3.5px, -3.5px);
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
+    box-shadow: #437bf3 3.5px 3.5px 0px;
+  }
 </style>
