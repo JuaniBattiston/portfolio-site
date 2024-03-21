@@ -2,19 +2,22 @@
 interface Props {
   text: string;
   svg?: string;
+  link?: string;
 }
 
-const { text, svg } = Astro.props;
+const { text, svg, link } = Astro.props;
 ---
 
 <button
   class="relative inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br gradient-tag dark:text-white"
 >
-  <div
+  <a
     class="flex items-center justify-center md:px-[0.8rem] sm:px-4 md:w-auto w-[41px] h-[40px] bg-white dark:bg-slate-900 rounded-md"
+    target="_blank"
+    href={link}
   >
     <i class={svg}></i><span class="px-1 hidden md:inline">{text}</span>
-  </div>
+  </a>
 </button>
 
 <style>
