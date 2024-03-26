@@ -1,0 +1,29 @@
+---
+interface Props {
+  text: string;
+  icon?: string;
+  svg?: string;
+}
+
+const { text, icon, svg } = Astro.props;
+---
+
+<div
+  class="relative inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br gradient-tag-linkless dark:text-white"
+>
+  <a
+    class="flex items-center justify-center px-[0.8rem] w-auto h-[30px] bg-white dark:bg-slate-900 rounded-md"
+  >
+    {icon && <i class={icon} />}
+    {svg && <img class="w-5 h-5" src={svg} alt="" />}
+    <span class="px-1 inline">{text}</span>
+  </a>
+</div>
+
+<style>
+  .gradient-tag-linkless {
+    background: linear-gradient(to right, #67e8f9, #818cf8, #67e8f9, #818cf8);
+    background-size: 300% 300%;
+    animation: gradient 10s linear infinite;
+  }
+</style>

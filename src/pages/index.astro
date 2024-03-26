@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import LinkButton from "../components/LinkButton.astro";
+import TechTag from "../components/TechTag.astro";
 ---
 
 <Layout title="Juani Battiston">
@@ -79,14 +80,13 @@ import LinkButton from "../components/LinkButton.astro";
           class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-indigo-300 dark:bg-indigo-300"
         >
         </div>
-        <time
-          class="mb-1 text-sm font-bold leading-none text-gray-400 dark:text-gray-500"
+        <time class="mb-1 text-sm font-bold leading-none text-gray-400"
           >November 2023 - February 2024</time
         >
         <h3 class="text-xl font-bold text-gray-900 dark:text-white">
           Freelance Web Development
         </h3>
-        <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">
+        <p class="mb-4 text-base font-normal text-gray-300">
           Built and maintained an exam taking website for a Fivem community's
           whitelisted access. Created a discord integration to automatically
           assign roles to users who passed the exam and worked directly with the
@@ -111,14 +111,13 @@ import LinkButton from "../components/LinkButton.astro";
           class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-indigo-300 dark:bg-indigo-300"
         >
         </div>
-        <time
-          class="mb-1 text-sm font-bold leading-none text-gray-400 dark:text-gray-500"
+        <time class="mb-1 text-sm font-bold leading-none text-gray-400"
           >November 2023</time
         >
         <h3 class="text-xl font-bold text-gray-900 dark:text-white">
           Arduino Course for Highschool Teachers
         </h3>
-        <p class="text-base font-normal text-gray-500 dark:text-gray-400">
+        <p class="text-base font-normal text-gray-300">
           Participated as a tutor in an Arduino introduction course from the
           Blas Pascal University given to highschool teachers to promote the use
           of robots as a teaching tool.
@@ -126,6 +125,52 @@ import LinkButton from "../components/LinkButton.astro";
       </li>
     </ol>
   </div>
-</Layout>
+  <div
+    id="projects"
+    class="w-10/12 lg:w-[700px] md:w-[650px] mx-auto py-48 text-white"
+  >
+    <div class="flex items-center">
+      <h3 class="sm:text-4xl text-3xl font-bold pb-11 text-white">
+        <span
+          class="sm:text-4xl text-3xl text-cyan-400 drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)] font-inconsolata-var"
+          >02.</span
+        >
+        <span class="">Projects</span>
+      </h3>
+    </div>
+    <div class="">
+      <h4 class="text-2xl font-bold pb-4">
+        <i class="fa-solid fa-code text-cyan-400 pr-2"></i>Paddle Club Website
+      </h4>
+      <div class="pb-5 tech-tags flex flex-wrap gap-5">
+        <TechTag text="Django" svg="django.svg" />
+        <TechTag text="Bootstrap" icon="fa-brands fa-bootstrap" />
+      </div>
+      <div class="wrap">
+        <img class="rounded-2xl" src="paddle_club.png" />
+        <p class="py-4">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam odio
+          excepturi fuga, atque blanditiis reiciendis totam assumenda maiores
+          laudantium accusamus provident cumque tempore mollitia beatae at eaque
+          ipsa quo tempora?
+        </p>
+        <div>
+          <button
+            class="gradient-button bg-gradient-to-r from-cyan-300 to-indigo-400 text-gray-800 font-bold py-3 px-3 mr-2 rounded inline-flex items-center"
+          >
+            <i class="fa-brands fa-github pr-2"></i>
+            <span class="">Repository</span>
+          </button>
+          <button
+            class="gradient-button bg-gradient-to-r from-cyan-300 to-indigo-400 text-gray-800 font-bold py-3 px-3 rounded inline-flex items-center"
+          >
+            <i class="fa-solid fa-link pr-2"></i>
+            <span class="">Deployment</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
 
-<Footer />
+  <Footer />
+</Layout>
