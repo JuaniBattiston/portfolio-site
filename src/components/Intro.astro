@@ -1,0 +1,57 @@
+---
+import LinkButton from "../components/LinkButton.astro";
+---
+
+<div class="w-10/12 lg:w-[700px] md:w-[650px] mx-auto py-48">
+  <h3 class="lg:text-xl text-medium font-medium pb-3 text-gray-200">
+    Hey! I'm
+  </h3>
+  <h1
+    class="gradient-text md:text-[4.3rem] sm:text-[4.2rem] text-[2.6rem]/[1.25] font-extrabold text-transparent pb-3"
+  >
+    Juan I. Battiston
+  </h1>
+  <p class="lg:text-xl text-medium pt-3 pb-7 font-medium text-gray-200">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur quis
+    tortor mi. Vestibulum a nibh lacus. Ut molestie pellentesque varius. Proin
+    quis faucibus lacus.
+  </p>
+  <div class="flex items-center justify-between">
+    <ul class="flex flex-row items-center">
+      <li>
+        <button
+          class="gradient-button bg-gradient-to-r from-cyan-300 to-indigo-400 text-gray-800 font-bold sm:py-5 sm:px-9 sm:text-lg text-xs py-5 px-4 rounded inline-flex items-center"
+        >
+          <svg
+            class="fill-current w-4 h-4 mr-2"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 20 20"
+            ><path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z"></path></svg
+          >
+          <span>Download CV</span>
+        </button>
+      </li>
+      <li class="sm:pl-10 pl-4">
+        <LinkButton
+          text="Linkedin"
+          svg="fa-brands fa-linkedin fa-xl"
+          link="https://www.linkedin.com/in/juani-battiston-490530245/"
+        />
+      </li>
+      <li class="sm:pl-10 pl-4">
+        <LinkButton
+          text="Github"
+          svg="fa-brands fa-github fa-xl"
+          link="https://github.com/JuaniBattiston"
+        />
+      </li>
+      <li class="sm:pl-10 pl-4">
+        <LinkButton
+          text="Mail"
+          svg="fa-regular fa-envelope fa-xl"
+          link="mailto:juani.battiston2002@gmail.com"
+        />
+      </li>
+    </ul>
+  </div>
+</div>

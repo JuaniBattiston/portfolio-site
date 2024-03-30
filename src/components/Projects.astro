@@ -1,0 +1,94 @@
+---
+import TechTag from "../components/TechTag.astro";
+
+const TAGS = {
+  DJANGO: {
+    text: "Django",
+    icon: "",
+    svg: "django.svg",
+  },
+  BOOTSTRAP: {
+    text: "Bootstrap",
+    icon: "fa-brands fa-bootstrap",
+    svg: "",
+  },
+  PYTHON: {
+    text: "Python",
+    icon: "fa-brands fa-python",
+    svg: "",
+  },
+};
+
+const PROJECTS = [
+  {
+    title: "Paddle Club Website",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam odio excepturi fuga, atque blanditiis reiciendis totam assumenda maiores laudantium accusamus provident cumque tempore mollitia beatae at eaque ipsa quo tempora?",
+    image: "paddle_club.png",
+    github: "https://github.com",
+    deployment: "https://github.com",
+    tags: [TAGS.DJANGO, TAGS.BOOTSTRAP],
+  },
+  {
+    title: "MST Animator",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam odio excepturi fuga, atque blanditiis reiciendis totam assumenda maiores laudantium accusamus provident cumque tempore mollitia beatae at eaque ipsa quo tempora?",
+    image: "mst_animator.png",
+    github: "https://github.com",
+    deployment: "https://github.com",
+    tags: [TAGS.PYTHON],
+  },
+];
+---
+
+<div
+  id="projects"
+  class="w-10/12 lg:w-[700px] md:w-[650px] mx-auto pt-48 text-white"
+>
+  <div class="flex items-center">
+    <h3 class="sm:text-4xl text-3xl font-bold pb-11 text-white">
+      <span
+        class="sm:text-4xl text-3xl text-cyan-400 drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)] font-inconsolata-var"
+        >02.</span
+      >
+      <span class="">Projects</span>
+    </h3>
+  </div>
+  <article>
+    {
+      PROJECTS.map(
+        ({ title, description, image, github, deployment, tags }) => (
+          <div class="pb-10">
+            <h4 class="text-2xl font-bold pb-4">
+              <i class="fa-solid fa-code text-cyan-400 pr-2 drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)]" />
+              {title}
+            </h4>
+            <div class="pb-5 tech-tags flex flex-wrap gap-5">
+              {tags.map(({ text, svg, icon }) => (
+                <TechTag text={text} svg={svg} icon={icon} />
+              ))}
+            </div>
+            <div class="wrap">
+              <img class="rounded-2xl" src={image} />
+              <p class="py-4">{description}</p>
+              <div>
+                <button class="gradient-button bg-gradient-to-r from-cyan-300 to-indigo-400 text-gray-800 font-bold py-3 px-3 mr-2 rounded inline-flex items-center">
+                  <i class="fa-brands fa-github pr-2" />
+                  <a href={github} target="_blank">
+                    Repository
+                  </a>
+                </button>
+                <button class="gradient-button bg-gradient-to-r from-cyan-300 to-indigo-400 text-gray-800 font-bold py-3 px-3 rounded inline-flex items-center">
+                  <i class="fa-solid fa-link pr-2" />
+                  <a href={deployment} target="_blank">
+                    Deployment
+                  </a>
+                </button>
+              </div>
+            </div>
+          </div>
+        )
+      )
+    }
+  </article>
+</div>
