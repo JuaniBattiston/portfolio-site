@@ -68,8 +68,13 @@ const PROJECTS = [
                 <TechTag text={text} svg={svg} icon={icon} />
               ))}
             </div>
-            <div class="wrap">
-              <img class="rounded-2xl" src={image} />
+            <div>
+              <div class="img-container overflow-hidden rounded-2xl">
+                <img
+                  class="rounded-2xl hover:scale-[1.08] transition ease duration-500"
+                  src={image}
+                />
+              </div>
               <p class="py-4">{description}</p>
               <div>
                 <button class="gradient-button bg-gradient-to-r from-cyan-300 to-indigo-400 text-gray-800 font-bold py-3 px-3 mr-2 rounded inline-flex items-center">
