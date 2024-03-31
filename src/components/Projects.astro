@@ -23,7 +23,7 @@ const PROJECTS = [
   {
     title: "Paddle Club Website",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam odio excepturi fuga, atque blanditiis reiciendis totam assumenda maiores laudantium accusamus provident cumque tempore mollitia beatae at eaque ipsa quo tempora?",
+      "A fully responsive website for a fictional paddle club built using Django and Bootstrap. It includes a complete authentication system, a court reservation feature, and a minimalist admin panel.",
     image: "paddle_club.png",
     github: "https://github.com",
     deployment: "https://github.com",
@@ -32,10 +32,10 @@ const PROJECTS = [
   {
     title: "MST Animator",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam odio excepturi fuga, atque blanditiis reiciendis totam assumenda maiores laudantium accusamus provident cumque tempore mollitia beatae at eaque ipsa quo tempora?",
+      "A video animation tool built with Python using Manim Community. It allows users to load a graph from the command line and generate a visual representation of the Krukal's and Prim's algorithms.",
     image: "mst_animator.png",
     github: "https://github.com",
-    deployment: "https://github.com",
+    deployment: null,
     tags: [TAGS.PYTHON],
   },
 ];
@@ -83,12 +83,14 @@ const PROJECTS = [
                     Repository
                   </a>
                 </button>
-                <button class="gradient-button bg-gradient-to-r from-cyan-300 to-indigo-400 text-gray-800 font-bold py-3 px-3 rounded inline-flex items-center">
-                  <i class="fa-solid fa-link pr-2" />
-                  <a href={deployment} target="_blank">
-                    Deployment
-                  </a>
-                </button>
+                {deployment ? (
+                  <button class="gradient-button bg-gradient-to-r from-cyan-300 to-indigo-400 text-gray-800 font-bold py-3 px-3 rounded inline-flex items-center">
+                    <i class="fa-solid fa-link pr-2" />
+                    <a href={deployment} target="_blank">
+                      Deployment
+                    </a>
+                  </button>
+                ) : null}
               </div>
             </div>
           </div>
