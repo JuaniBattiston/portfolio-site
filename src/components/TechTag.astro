@@ -15,7 +15,7 @@ const { text, icon, svg } = Astro.props;
     class="flex items-center justify-center px-[0.8rem] w-auto h-[30px] bg-sky-100 dark:bg-slate-900 rounded-md"
   >
     {icon && <i class={icon} />}
-    {svg && <img class="w-5 h-5" src={svg} alt="" />}
+    {svg && <img class="w-5 h-5 text-blue-900 dark:text-white" src={svg} alt="" />}
     <span class="px-1 inline">{text}</span>
   </a>
 </div>

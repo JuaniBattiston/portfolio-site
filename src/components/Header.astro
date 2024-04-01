@@ -1,5 +1,7 @@
 ---
 import ThemeIcon from "./ThemeIcon.astro"
+import Sun from "../../public/Sun.astro";
+import Moon from "../../public/Moon.astro";
 ---
 
 <header>
@@ -13,7 +15,7 @@ import ThemeIcon from "./ThemeIcon.astro"
           >01.</span
         ><a
           href="#work"
-          class="text-blue-900 dark:text-white text-lg font-bold hover:text-cyan-300 transition duration-300 ease-in-out drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)]"
+          class="text-blue-900 dark:text-white text-lg font-bold hover:text-indigo-600 dark:hover:text-cyan-300 transition duration-300 ease-in-out drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)]"
           >Work</a
         >
       </li>
@@ -23,7 +25,7 @@ import ThemeIcon from "./ThemeIcon.astro"
           >02.</span
         ><a
           href="#projects"
-          class="text-blue-900 dark:text-white text-lg font-bold hover:text-cyan-300 transition duration-300 ease-in-out drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)]"
+          class="text-blue-900 dark:text-white text-lg font-bold hover:text-indigo-600 dark:hover:text-cyan-300 transition duration-300 ease-in-out drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)]"
           >Projects</a
         >
       </li>
@@ -33,7 +35,7 @@ import ThemeIcon from "./ThemeIcon.astro"
           >03.</span
         ><a
           href="#about"
-          class="text-blue-900 dark:text-white text-lg font-bold hover:text-cyan-300 transition duration-300 ease-in-out drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)]"
+          class="text-blue-900 dark:text-white text-lg font-bold hover:text-indigo-600 dark:hover:text-cyan-300 transition duration-300 ease-in-out drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)]"
           >About</a
         >
       </li>
@@ -43,12 +45,12 @@ import ThemeIcon from "./ThemeIcon.astro"
           >04.</span
         ><a
           href="#contact"
-          class="text-blue-900 dark:text-white text-lg font-bold hover:text-cyan-300 transition duration-300 ease-in-out drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)]"
+          class="text-blue-900 dark:text-white text-lg font-bold hover:text-indigo-600 dark:hover:text-cyan-300 transition duration-300 ease-in-out drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)]"
           >Contact</a
         >
       </li>
       <li>
-        <ThemeIcon />
+        <ThemeIcon/>
       </li>
     </ul>
   </nav>
@@ -85,7 +87,8 @@ import ThemeIcon from "./ThemeIcon.astro"
         x-transition:leave-end="opacity-0 lg:scale-75"
         :hidden="!navigationOpen"
       >
-        <div class="flex items-center justify-end">
+        <div class="flex items-center justify-between">
+          <ThemeIcon/>
           <button
             class="navbar-close"
             @click="navigationOpen = !navigationOpen"
@@ -113,7 +116,7 @@ import ThemeIcon from "./ThemeIcon.astro"
             >
             <a
               href="#work"
-              class="text-blue-900 dark:text-white text-xl text-medium hover:text-cyan-300 transition duration-300 ease-in-out hover:drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)]"
+              class="text-blue-900 dark:text-white text-xl text-medium hover:text-indigo-600 dark:hover:text-cyan-300 transition duration-300 ease-in-out hover:drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)]"
               @click="navigationOpen = !navigationOpen">Work</a
             >
           </li>
@@ -123,7 +126,7 @@ import ThemeIcon from "./ThemeIcon.astro"
               >02.</span
             ><a
               href="#projects"
-              class="text-blue-900 dark:text-white text-xl text-medium hover:text-cyan-300 transition duration-300 ease-in-out hover:drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)]"
+              class="text-blue-900 dark:text-white text-xl text-medium hover:text-indigo-600 dark:hover:text-cyan-300 transition duration-300 ease-in-out hover:drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)]"
               @click="navigationOpen = !navigationOpen">Projects</a
             >
           </li>
@@ -133,7 +136,7 @@ import ThemeIcon from "./ThemeIcon.astro"
               >03.</span
             ><a
               href="#about"
-              class="text-blue-900 dark:text-white text-xl text-medium hover:text-cyan-300 transition duration-300 ease-in-out hover:drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)]"
+              class="text-blue-900 dark:text-white text-xl text-medium hover:text-indigo-600 dark:hover:text-cyan-300 transition duration-300 ease-in-out hover:drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)]"
               @click="navigationOpen = !navigationOpen">About</a
             >
           </li>
@@ -143,7 +146,7 @@ import ThemeIcon from "./ThemeIcon.astro"
               >04.</span
             ><a
               href="#contact"
-              class="text-blue-900 dark:text-white text-xl text-medium hover:text-cyan-300 transition duration-300 ease-in-out hover:drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)]"
+              class="text-blue-900 dark:text-white text-xl text-medium hover:text-indigo-600 dark:hover:text-cyan-300 transition duration-300 ease-in-out hover:drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)]"
               @click="navigationOpen = !navigationOpen">Contact</a
             >
           </li>
