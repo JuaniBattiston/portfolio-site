@@ -24,27 +24,27 @@ const WORKEXPERIENCE = [
 
 <div id="work" class="w-10/12 lg:w-[700px] md:w-[650px] mx-auto">
   <div class="flex items-center">
-    <h3 class="sm:text-4xl text-3xl font-bold pb-11 text-white">
+    <h3 class="sm:text-4xl text-3xl font-bold pb-11 text-blue-900 dark:text-white">
       <span class="sm:text-4xl text-3xl highlighted-text font-inconsolata-var"
         >01.</span
       >
       <span>Work</span>
     </h3>
   </div>
-  <ol class="relative border-s-2 border-gray-200 dark:border-cyan-300">
+  <ol class="relative border-s-2 border-blue-200 border-cyan-300">
     {
       WORKEXPERIENCE.map(({ date, title, description, link }) => (
         <li class="mb-10 ms-4">
-          <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-indigo-300 dark:bg-indigo-300" />
-          <time class="mb-1 text-sm font-bold leading-none text-gray-400">
+          <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-blue-100 border-indigo-300 bg-indigo-300" />
+          <time class="mb-1 text-sm font-bold leading-none text-slate-500 dark:text-gray-400">
             {date}
           </time>
-          <h3 class="text-xl font-bold text-gray-900 dark:text-white">
+          <h3 class="text-xl font-bold text-blue-900 dark:text-white">
             {title}
           </h3>
-          <p class="mb-4 text-base font-normal text-gray-300">{description}</p>
+          <p class="mb-4 text-base font-normal text-blue-900 dark:text-gray-300">{description}</p>
           {link ? (
-            <button class="gradient-button bg-gradient-to-r from-cyan-300 to-indigo-400 text-gray-800 font-bold py-3 px-5 rounded inline-flex items-center">
+            <button class="gradient-button bg-gradient-to-r from-cyan-300 to-indigo-400 text-blue-900 dark:text-gray-800 font-bold py-3 px-5 rounded inline-flex items-center">
               <span class="pr-2">{link}</span>
               <i class="fa-solid fa-arrow-right" />
             </button>

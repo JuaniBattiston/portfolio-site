@@ -1,3 +1,7 @@
+---
+import ThemeIcon from "./ThemeIcon.astro"
+---
+
 <header>
   <nav class="relative pt-6 flex justify-end items-center bg-transparent">
     <ul
@@ -5,43 +9,46 @@
     >
       <li>
         <span
-          class="text-cyan-300 text-[1.1rem] font-bold drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)] font-inconsolata-var pr-1"
+          class="text-indigo-600 dark:text-cyan-300 text-[1.1rem] font-bold drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)] font-inconsolata-var pr-1"
           >01.</span
         ><a
           href="#work"
-          class="text-white text-lg font-bold hover:text-cyan-300 transition duration-300 ease-in-out drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)]"
+          class="text-blue-900 dark:text-white text-lg font-bold hover:text-cyan-300 transition duration-300 ease-in-out drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)]"
           >Work</a
         >
       </li>
       <li>
         <span
-          class="text-cyan-300 text-[1.1rem] font-bold drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)] font-inconsolata-var pr-1"
+          class="text-indigo-600 dark:text-cyan-300 text-[1.1rem] font-bold drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)] font-inconsolata-var pr-1"
           >02.</span
         ><a
           href="#projects"
-          class="text-white text-lg font-bold hover:text-cyan-300 transition duration-300 ease-in-out drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)]"
+          class="text-blue-900 dark:text-white text-lg font-bold hover:text-cyan-300 transition duration-300 ease-in-out drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)]"
           >Projects</a
         >
       </li>
       <li>
         <span
-          class="text-cyan-300 text-[1.1rem] font-bold drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)] font-inconsolata-var pr-1"
+          class="text-indigo-600 dark:text-cyan-300 text-[1.1rem] font-bold drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)] font-inconsolata-var pr-1"
           >03.</span
         ><a
           href="#about"
-          class="text-white text-lg font-bold hover:text-cyan-300 transition duration-300 ease-in-out drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)]"
+          class="text-blue-900 dark:text-white text-lg font-bold hover:text-cyan-300 transition duration-300 ease-in-out drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)]"
           >About</a
         >
       </li>
       <li>
         <span
-          class="text-cyan-300 text-[1.1rem] font-bold drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)] font-inconsolata-var pr-1"
+          class="text-indigo-600 dark:text-cyan-300 text-[1.1rem] font-bold drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)] font-inconsolata-var pr-1"
           >04.</span
         ><a
           href="#contact"
-          class="text-white text-lg font-bold hover:text-cyan-300 transition duration-300 ease-in-out drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)]"
+          class="text-blue-900 dark:text-white text-lg font-bold hover:text-cyan-300 transition duration-300 ease-in-out drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)]"
           >Contact</a
         >
+      </li>
+      <li>
+        <ThemeIcon />
       </li>
     </ul>
   </nav>
@@ -54,7 +61,7 @@
       class="flex justify-end items-center absolute top-0 right-0 py-4 px-4 z-30"
     >
       <button
-        class="flex items-center text-cyan-300 p-3 md:hidden"
+        class="flex items-center text-indigo-600 dark:text-cyan-300 p-3 md:hidden"
         @click="navigationOpen = !navigationOpen;"
       >
         <svg
@@ -68,7 +75,7 @@
       </button>
       <div
         id="mobile-nav"
-        class="fixed top-0 right-0 bottom-0 flex flex-col w-5/6 max-w-sm py-6 px-6 z-30 bg-blue-950 transform transition-all duration-300 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(30,58,138,0.9),rgba(15,30,70,0.9))]"
+        class="fixed top-0 right-0 bottom-0 flex flex-col w-5/6 max-w-sm py-6 px-6 z-30 transform transition-all duration-300 bg-white bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(0,163,255,0.1),rgba(0,163,255,0.1))] dark:bg-blue-950 dark:bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(30,58,138,0.9),rgba(15,30,70,0.9))]"
         @click.away="navigationOpen = false"
         x-trap.noscroll="navigationOpen"
         x-show="navigationOpen"
@@ -84,7 +91,7 @@
             @click="navigationOpen = !navigationOpen"
           >
             <svg
-              class="h-7 w-7 text-cyan-300"
+              class="h-7 w-7 text-indigo-600 dark:text-cyan-300"
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
@@ -101,42 +108,42 @@
         <ul class="flex flex-col mx-auto my-auto">
           <li class="py-6 flex flex-col items-center justify-center mx-auto">
             <span
-              class="text-cyan-300 text-xl font-bold drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)] font-inconsolata-var"
+              class="text-indigo-600 dark:text-cyan-300 text-xl font-bold drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)] font-inconsolata-var"
               >01.</span
             >
             <a
               href="#work"
-              class="text-white text-xl text-medium hover:text-cyan-300 transition duration-300 ease-in-out hover:drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)]"
+              class="text-blue-900 dark:text-white text-xl text-medium hover:text-cyan-300 transition duration-300 ease-in-out hover:drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)]"
               @click="navigationOpen = !navigationOpen">Work</a
             >
           </li>
           <li class="py-6 flex flex-col items-center justify-center mx-auto">
             <span
-              class="text-cyan-300 text-xl font-bold drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)] font-inconsolata-var"
+              class="text-indigo-600 dark:text-cyan-300 text-xl font-bold drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)] font-inconsolata-var"
               >02.</span
             ><a
               href="#projects"
-              class="text-white text-xl text-medium hover:text-cyan-300 transition duration-300 ease-in-out hover:drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)]"
+              class="text-blue-900 dark:text-white text-xl text-medium hover:text-cyan-300 transition duration-300 ease-in-out hover:drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)]"
               @click="navigationOpen = !navigationOpen">Projects</a
             >
           </li>
           <li class="py-6 flex flex-col items-center justify-center mx-auto">
             <span
-              class="text-cyan-300 text-xl font-bold drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)] font-inconsolata-var"
+              class="text-indigo-600 dark:text-cyan-300 text-xl font-bold drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)] font-inconsolata-var"
               >03.</span
             ><a
               href="#about"
-              class="text-white text-xl text-medium hover:text-cyan-300 transition duration-300 ease-in-out hover:drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)]"
+              class="text-blue-900 dark:text-white text-xl text-medium hover:text-cyan-300 transition duration-300 ease-in-out hover:drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)]"
               @click="navigationOpen = !navigationOpen">About</a
             >
           </li>
           <li class="py-6 flex flex-col items-center justify-center mx-auto">
             <span
-              class="text-cyan-300 text-xl font-bold drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)] font-inconsolata-var"
+              class="text-indigo-600 dark:text-cyan-300 text-xl font-bold drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)] font-inconsolata-var"
               >04.</span
             ><a
               href="#contact"
-              class="text-white text-xl text-medium hover:text-cyan-300 transition duration-300 ease-in-out hover:drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)]"
+              class="text-blue-900 dark:text-white text-xl text-medium hover:text-cyan-300 transition duration-300 ease-in-out hover:drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)]"
               @click="navigationOpen = !navigationOpen">Contact</a
             >
           </li>
