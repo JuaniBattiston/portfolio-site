@@ -1,5 +1,6 @@
 ---
 import ThemeIcon from "./ThemeIcon.astro"
+import ThemeIconMobile from "./ThemeIconMobile.astro"
 ---
 
 <header>
@@ -86,7 +87,7 @@ import ThemeIcon from "./ThemeIcon.astro"
         :hidden="!navigationOpen"
       >
         <div class="flex items-center justify-between">
-          <ThemeIcon/>
+          <ThemeIconMobile/>
           <button
             class="navbar-close"
             @click="navigationOpen = !navigationOpen"

@@ -1,0 +1,83 @@
+---
+import Sun from "../../public/Sun.astro";
+import Moon from "../../public/Moon.astro";
+---
+
+<button id="themeToggleMobile">
+  <Sun id="lightMobile" class="theme-toggle-icon-mobile" />
+  <Moon id="darkMobile" class="theme-toggle-icon-mobile" />
+</button>
+
+<style>
+  #lightMobile,
+  #darkMobile {
+    display: none;
+  }
+
+  .light #darkMobile {
+    display: none;
+  }
+
+  .dark #lightMobile {
+    display: none;
+  }
+
+  .theme-toggle-icon-mobile {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+
+  .theme-toggle-icon-mobile:hover {
+    transform: scale(1.2);
+    transition: transform 0.2s;
+  }
+
+</style>
+
+<script is:inline>
+    const themeMobile = (() => {
+      if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+        return localStorage.getItem('theme');
+      }
+      if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        return 'dark';
+      }
+      return 'light';
+    })();
+  
+    if (themeMobile === 'light') {
+      document.documentElement.classList.remove('dark');
+    } else {
+      document.documentElement.classList.add('dark');
+    }
+  
+    window.localStorage.setItem('theme', theme);
+  
+    const lightIconMobile = document.getElementById("lightMobile");
+    const darkIconMobile = document.getElementById("darkMobile");
+    
+    if (themeMobile === 'light') {
+      darkIconMobile.style.display = "none";
+      lightIconMobile.style.display = "inline-block";
+    } else {
+      lightIconMobile.style.display = "none";
+      darkIconMobile.style.display = "inline-block";
+    }
+  
+    const handleToggleClickMobile = () => {
+      const element = document.documentElement;
+      element.classList.toggle("dark");
+  
+      const isDark = element.classList.contains("dark");
+      localStorage.setItem("themeMobile", isDark ? "dark" : "light");
+  
+      if (isDark) {
+        darkIconMobile.style.display = "inline-block";
+        lightIconMobile.style.display = "none";
+      } else {
+        lightIconMobile.style.display = "inline-block";
+        darkIconMobile.style.display = "none";
+      }
+    }
+    document.getElementById("themeToggleMobile").addEventListener("click", handleToggleClickMobile);
+</script>
