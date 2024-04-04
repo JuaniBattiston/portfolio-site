@@ -46,12 +46,14 @@ const PROJECTS = [
   class="w-10/12 lg:w-[700px] md:w-[650px] mx-auto pt-48 text-white"
 >
   <div class="flex items-center">
-    <h3 class="sm:text-4xl text-3xl font-bold pb-11 text-blue-900 dark:text-white">
+    <h3
+      class="sm:text-4xl text-3xl font-bold pb-11 text-blue-900 dark:text-white"
+    >
       <span
-        class="sm:text-4xl text-3xl text-indigo-600 drop-shadow-[0_2px_2px_rgba(79, 70, 229, 0.3)] dark:text-cyan-300 dark:drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)] font-inconsolata-var"
+        class="sm:text-4xl text-3xl text-indigo-600 dark:text-cyan-300 drop-shadow-[0_2px_2px_rgba(79,70,229,0.3)] dark:drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)] font-inconsolata-var"
         >02.</span
       >
-      <span >Projects</span>
+      <span>Projects</span>
     </h3>
   </div>
   <article>
@@ -60,7 +62,7 @@ const PROJECTS = [
         ({ title, description, image, github, deployment, tags }) => (
           <div class="pb-10">
             <h4 class="text-2xl text-blue-900 dark:text-white font-bold pb-4">
-              <i class="fa-solid fa-code pr-2 text-indigo-600 drop-shadow-[0_2px_2px_rgba(79, 70, 229, 0.3)] dark:text-cyan-300 dark:drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)]" />
+              <i class="fa-solid fa-code pr-2 text-indigo-600 dark:text-cyan-300 drop-shadow-[0_2px_2px_rgba(79,70,229,0.3)] dark:drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)]" />
               {title}
             </h4>
             <div class="pb-5 tech-tags flex flex-wrap gap-5">
@@ -79,14 +81,22 @@ const PROJECTS = [
               <div>
                 <button class="gradient-button bg-gradient-to-r from-cyan-300 to-indigo-400 text-gray-800 font-bold py-3 px-3 mr-2 rounded inline-flex items-center ">
                   <i class="fa-brands fa-github pr-2 text-blue-900 dark:text-black" />
-                  <a class=" text-blue-900 dark:text-black" href={github} target="_blank">
+                  <a
+                    class=" text-blue-900 dark:text-black"
+                    href={github}
+                    target="_blank"
+                  >
                     Repository
                   </a>
                 </button>
                 {deployment ? (
                   <button class="gradient-button bg-gradient-to-r from-cyan-300 to-indigo-400 text-gray-800 font-bold py-3 px-3 rounded inline-flex items-center">
                     <i class="fa-solid fa-link pr-2 text-blue-900 dark:text-black" />
-                    <a class=" text-blue-900 dark:text-black" href={deployment} target="_blank">
+                    <a
+                      class=" text-blue-900 dark:text-black"
+                      href={deployment}
+                      target="_blank"
+                    >
                       Deployment
                     </a>
                   </button>
