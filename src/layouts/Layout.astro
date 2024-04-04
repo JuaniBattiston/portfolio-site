@@ -56,37 +56,39 @@ const { title } = Astro.props;
     background-clip: text;
     animation: gradient 14s linear infinite;
   }
-  @keyframes gradient {
-    0% {
-      background-position: 0% 50%;
-    }
-    100% {
-      background-position: 100% 50%;
-    }
+
+  .gradient-button {
+    background: linear-gradient(to right, #67e8f9, #818cf8, #67e8f9, #818cf8);
+    background-size: 300% 300%;
+    animation: gradient 10s linear infinite;
+    transition: transform 0.3s ease-out, box-shadow 0.3s ease-out; /* Added transition properties */
   }
 
   .gradient-button:hover {
     transform: translate(-3.5px, -3.5px);
-    transition:
-      transform 0.3s ease,
-      box-shadow 0.3s ease;
     box-shadow: #437bf3 3.5px 3.5px 0px;
-    background: linear-gradient(to right, #67e8f9, #818cf8, #67e8f9, #818cf8);
-    background-size: 300% 300%;
-    animation: gradient 10s linear infinite;
   }
-
   .gradient-tag {
-    background: linear-gradient(to right, #67e8f9, #818cf8, #67e8f9, #818cf8);
-    background-size: 300% 300%;
-    animation: gradient 10s linear infinite;
+  background: linear-gradient(to right, #67e8f9, #818cf8, #67e8f9, #818cf8);
+  background-size: 300% 300%;
+  animation: gradient 10s linear infinite;
+  transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
   }
 
-  .gradient-tag:hover {
-    transform: translate(-3.5px, -3.5px);
-    transition:
-      transform 0.3s ease,
-      box-shadow 0.3s ease;
-    box-shadow: #437bf3 3.5px 3.5px 0px;
+.gradient-tag:hover {
+  transform: translate(-3.5px, -3.5px);
+  box-shadow: #437bf3 3.5px 3.5px 0px;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
   }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
 </style>
