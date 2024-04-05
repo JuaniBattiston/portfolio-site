@@ -2,7 +2,6 @@
 import { languages } from "../i18n/ui";
 import { getLangFromUrl } from "../i18n/utils";
 
-//add dictionary to relate en/es to a flag
 const langFlag: { [key: string]: string } = {
   en: "/us.svg",
   es: "/ar.svg",
@@ -41,7 +40,8 @@ const currentFlag = langFlag[currentLang];
         </span>
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          class="h-5 w-5 text-indigo-600 dark:text-cyan-300"
+          :class="{ 'text-blue-900 dark:text-white': !dropdownOpen, 'text-blue-900 dark:text-white rotate-180': dropdownOpen }"
+          class="h-5 w-5"
           viewBox="0 0 20 20"
           fill="currentColor"
         >
