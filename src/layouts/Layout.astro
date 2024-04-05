@@ -30,9 +30,28 @@ const lang = getLangFromUrl(Astro.url);
       defer
       src="https://cdn.jsdelivr.net/npm/@alpinejs/focus@3.x.x/dist/cdn.min.js"
     ></script>
-    <meta name="generator" content={Astro.generator} />
-    <meta name="author" content="Juan Ignacio Battiston" />
-    <meta name="description" content="Portfolio" />
+    <meta
+      name="description"
+      content="Software engineer based in Córdoba, Argentina. Computer engineering student with 2 years of freelance experience."
+    />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="theme-color" content="#22d3ee" />
+
+    <meta
+      name="keywords"
+      content="juanibattiston, juani, battiston, portfolio, curriculum, cv"
+    />
+
+    <meta name="og:title" content="Juan Ignacio Battiston" />
+    <meta
+      name="og:description"
+      content="Software engineer based in Córdoba, Argentina. Computer engineering student with 2 years of freelance experience."
+    />
+    <meta name="og:url" content={Astro.url} />
+    <meta name="og:site_name" content="Juan Ignacio Battiston Portfolio" />
+    <meta name="og:type" content="website" />
+    <meta name="og:locale" content="es_EN es_ES" />
+
     <title>{title}</title>
   </head>
   <body
