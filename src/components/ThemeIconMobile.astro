@@ -33,9 +33,16 @@ import Moon from "../../public/Moon.astro";
     height: 1.25rem;
   }
 
+  .theme-toggle-icon-mobile {
+    transition: transform 0.3s ease-in-out;
+  }
+
   .theme-toggle-icon-mobile:hover {
     transform: scale(1.2);
-    transition: transform 0.2s;
+  }
+
+  .theme-toggle-icon-mobile:not(:hover) {
+    transform: scale(1);
   }
 </style>
 
