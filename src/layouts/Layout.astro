@@ -42,9 +42,6 @@ const lang = getLangFromUrl(Astro.url);
 <style is:global>
   [x-cloak] {
     display: none !important;
-    color: rgba(0, 163, 255, 0.2);
-    color: rgba(0, 163, 255, 0);
-    color: rgba(0, 163, 255, 0);
   }
 
   .gradient-text {
@@ -69,7 +66,7 @@ const lang = getLangFromUrl(Astro.url);
     animation: gradient 10s linear infinite;
     transition:
       transform 0.3s ease-out,
-      box-shadow 0.3s ease-out; /* Added transition properties */
+      box-shadow 0.3s ease-out;
   }
 
   .gradient-button:hover {
@@ -94,11 +91,8 @@ const lang = getLangFromUrl(Astro.url);
     0% {
       background-position: 0% 50%;
     }
-    50% {
-      background-position: 100% 50%;
-    }
     100% {
-      background-position: 0% 50%;
+      background-position: 100% 50%;
     }
   }
 </style>
