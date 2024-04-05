@@ -1,23 +1,25 @@
 ---
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
 const WORKEXPERIENCE = [
   {
-    date: "November 2023 - February 2024",
-    title: "Freelance Web Development",
-    description:
-      "Built and maintained an exam taking website for a Fivem community's whitelisted access. Created a discord integration to automatically assign roles to users who passed the exam and worked directly with the team to build a time saving tool for them.",
-    link: "Visit site",
+    date: t("work.project.one.date"),
+    title: t("work.project.one.title"),
+    description: t("work.project.one.description"),
+    link: t("work.project.one.link"),
   },
   {
-    date: "November 2023",
-    title: "Arduino Course for Highschool Teachers",
-    description:
-      "Participated as a tutor in an Arduino introduction course from the Blas Pascal University given to highschool teachers to promote the use of robots as a teaching tool.",
+    date: t("work.project.two.date"),
+    title: t("work.project.two.title"),
+    description: t("work.project.two.description"),
   },
   {
-    date: "On and off since 2022",
-    title: "Freelance Discord Bot Development",
-    description:
-      "Developed a variety of discord bots for different purposes, including user moderation, server management, and custom functionality for the requirements of the client.",
+    date: t("work.project.three.date"),
+    title: t("work.project.three.title"),
+    description: t("work.project.three.description"),
   },
 ];
 ---

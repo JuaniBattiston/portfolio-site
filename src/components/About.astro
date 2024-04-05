@@ -1,3 +1,10 @@
+---
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
 <div
   id="about"
   class="w-10/12 lg:w-[700px] md:w-[650px] mx-auto pt-48 text-white"
@@ -10,68 +17,72 @@
         class="sm:text-4xl text-3xl text-indigo-600 dark:text-cyan-300 drop-shadow-[0_2px_2px_rgba(79,70,229,0.3)] dark:drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)] font-inconsolata-var"
         >03.</span
       >
-      <span>About me</span>
+      <span>{t("about.title")}</span>
     </h3>
   </div>
 
   <div class="flex flex-col space-y-8 text-blue-900 dark:text-white">
     <p class="text-lg">
-      My name is Juan Ignacio Battiston, but you can call me <span
+      {t("about.text.one")}<span
         class="text-indigo-600 dark:text-cyan-300 drop-shadow-[0_2px_2px_rgba(79,70,229,0.3)] dark:drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)]"
-        >Juani</span
-      >. I started coding in 2020 by building simple discord bots for my
-      friend's server, and I quickly developed a passion for it.
+        >{t("about.text.two")}</span
+      >{t("about.text.three")}
     </p>
 
     <p class="text-lg">
-      I am a Python developer interested in <span
-        class="text-indigo-600 dark:text-cyan-300 drop-shadow-[0_2px_2px_rgba(79,70,229,0.3)] dark:drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)]"
-        >data science</span
-      > and <span
-        class="text-indigo-600 dark:text-cyan-300 drop-shadow-[0_2px_2px_rgba(79,70,229,0.3)] dark:drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)]"
-        >freelancing</span
-      > while pursuing my third year of
+      {t("about.text.four")}
+      <span
+        class="inline-block text-indigo-600 dark:text-cyan-300 drop-shadow-[0_2px_2px_rgba(79,70,229,0.3)] dark:drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)]"
+      >
+        {t("about.text.five")}
+      </span>
+      {t("about.text.six")}
       <a
         href="https://landing.ubp.edu.ar/carreras/ingenieria-informatica/"
         target="_blank"
-        class="text-indigo-600 dark:text-cyan-300 drop-shadow-[0_2px_2px_rgba(79,70,229,0.3)] dark:drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)] group transition-all duration-300 ease-in-out"
-        ><span
-          class="bg-left-bottom bg-gradient-to-r from-indigo-600 to-indigo-600 dark:from-cyan-300 dark:to-cyan-300 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out"
-          >Computer Engineering degree at UBP</span
+        class="inline-block text-indigo-600 dark:text-cyan-300 drop-shadow-[0_2px_2px_rgba(79,70,229,0.3)] dark:drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)] group transition-all duration-300 ease-in-out"
+      >
+        <span
+          class="inline-block bg-left-bottom bg-gradient-to-r from-indigo-600 to-indigo-600 dark:from-cyan-300 dark:to-cyan-300 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out"
         >
-      </a>. Additionally, I hold certifications in English (<a
-        class="text-indigo-600 dark:text-cyan-300 drop-shadow-[0_2px_2px_rgba(79,70,229,0.3)] dark:drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)] group transition-all duration-300 ease-in-out"
+          {t("about.text.seven")}
+        </span>
+      </a>.
+      <span>{t("about.text.eight")}</span><a
+        class="inline-block text-indigo-600 dark:text-cyan-300 drop-shadow-[0_2px_2px_rgba(79,70,229,0.3)] dark:drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)] group transition-all duration-300 ease-in-out"
         href="https://ielts.org/take-a-test/test-types/ielts-academic-test"
         ><span
-          class="bg-left-bottom bg-gradient-to-r from-indigo-600 to-indigo-600 dark:from-cyan-300 dark:to-cyan-300 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out"
-          >IELTS Academic - C1 level</span
-        ></a
-      >) and German (<a
+          class="inline-block bg-left-bottom bg-gradient-to-r from-indigo-600 to-indigo-600 dark:from-cyan-300 dark:to-cyan-300 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out"
+        >
+          {t("about.text.nine")}
+        </span></a
+      >{t("about.text.ten")}<a
         href="https://www.kmk.org/themen/deutsches-sprachdiplom-dsd.html"
-        class="text-indigo-600 dark:text-cyan-300 drop-shadow-[0_2px_2px_rgba(79,70,229,0.3)] dark:drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)] group transition-all duration-300 ease-in-out"
+        class="inline-block text-indigo-600 dark:text-cyan-300 drop-shadow-[0_2px_2px_rgba(79,70,229,0.3)] dark:drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)] group transition-all duration-300 ease-in-out"
         ><span
           class="bg-left-bottom bg-gradient-to-r from-indigo-600 to-indigo-600 dark:from-cyan-300 dark:to-cyan-300 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out"
-          >DSDII - C1 level</span
-        ></a
+        >
+          {t("about.text.eleven")}
+        </span></a
       >).
     </p>
 
     <p class="text-lg">
-      I'm always eager to learn something new and take on fresh challenges. I
-      actively participate in <a
+      {t("about.text.twelve")}<a
         href="https://adventofcode.com/"
         class="text-indigo-600 dark:text-cyan-300 drop-shadow-[0_2px_2px_rgba(79,70,229,0.3)] dark:drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)] group transition-all duration-300 ease-in-out"
         ><span
           class="bg-left-bottom bg-gradient-to-r from-indigo-600 to-indigo-600 dark:from-cyan-300 dark:to-cyan-300 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out"
-          >Advent of Code</span
+          >{t("about.text.thirdteen")}</span
         ></a
-      > almost every year, and for the past two years, I've been involved in the
+      >
+      {t("about.text.fourteen")}
       <a
         href="https://cordobagamejam.com.ar/"
         class="text-indigo-600 dark:text-cyan-300 drop-shadow-[0_2px_2px_rgba(79,70,229,0.3)] dark:drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)] group transition-all duration-300 ease-in-out"
         ><span
           class="bg-left-bottom bg-gradient-to-r from-indigo-600 to-indigo-600 dark:from-cyan-300 dark:to-cyan-300 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out"
-          >Cordoba Game Jam</span
+          >{t("about.text.fifteen")}</span
         ></a
       >.
     </p>

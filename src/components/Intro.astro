@@ -1,12 +1,16 @@
 ---
 import LinkButton from "../components/LinkButton.astro";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <div class="w-10/12 lg:w-[700px] md:w-[650px] mx-auto py-48">
   <h3
     class="md:text-xl text-medium font-medium pb-3 dark:text-gray-200 text-blue-900"
   >
-    Hey! I'm
+    {t("intro.title")}
   </h3>
   <h1
     class="gradient-text md:text-[4.3rem] sm:text-[4.1rem] text-[2.4rem]/[1.25] font-extrabold text-transparent pb-3"
@@ -18,11 +22,14 @@ import LinkButton from "../components/LinkButton.astro";
   >
     <span
       class="text-indigo-600 dark:text-cyan-300 drop-shadow-[0_2px_2px_rgba(79,70,229,0.3)] dark:drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)]"
-      >Software engineer</span
-    > based in Córdoba, Argentina. Computer engineering student with <span
+      >{t("intro.description_role")}</span
+    >
+    {t("intro.description_text")}
+    <span
       class="text-indigo-600 dark:text-cyan-300 drop-shadow-[0_2px_2px_rgba(79,70,229,0.3)] dark:drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)]"
-      >2 years</span
-    > of freelance experience.
+      >{t("intro.description_htext")}</span
+    >
+    {t("intro.description_text2")}
   </p>
   <div class="flex items-center justify-between">
     <ul class="flex flex-row items-center">
@@ -36,7 +43,7 @@ import LinkButton from "../components/LinkButton.astro";
             viewBox="0 0 20 20"
             ><path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z"></path></svg
           >
-          <span>Download CV</span>
+          <span>{t("intro.cv")}</span>
         </button>
       </li>
       <li class="sm:pl-10 pl-4">

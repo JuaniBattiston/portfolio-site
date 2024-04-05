@@ -1,5 +1,9 @@
 ---
 import TechTag from "../components/TechTag.astro";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 
 const TAGS = {
   DJANGO: {
@@ -21,18 +25,16 @@ const TAGS = {
 
 const PROJECTS = [
   {
-    title: "Paddle Club Website",
-    description:
-      "A fully responsive website for a fictional paddle club built using Django and Bootstrap. It includes a complete authentication system, a court reservation feature, and a minimalist admin panel.",
+    title: t("projects.project.one.title"),
+    description: t("projects.project.one.description"),
     image: "paddle_club.webp",
     github: "https://github.com",
     deployment: "https://github.com",
     tags: [TAGS.DJANGO, TAGS.BOOTSTRAP],
   },
   {
-    title: "MST Animator",
-    description:
-      "A video animation tool built with Python using Manim Community. It allows users to load a graph from the command line and generate a visual representation of the Krukal's and Prim's algorithms.",
+    title: t("projects.project.two.title"),
+    description: t("projects.project.two.description"),
     image: "mst_animator.webp",
     github: "https://github.com",
     deployment: null,
@@ -53,7 +55,7 @@ const PROJECTS = [
         class="sm:text-4xl text-3xl text-indigo-600 dark:text-cyan-300 drop-shadow-[0_2px_2px_rgba(79,70,229,0.3)] dark:drop-shadow-[0_2px_2px_rgba(103,232,249,0.3)] font-inconsolata-var"
         >02.</span
       >
-      <span>Projects</span>
+      <span>{t("projects.title")}</span>
     </h3>
   </div>
   <article>
@@ -86,7 +88,7 @@ const PROJECTS = [
                     href={github}
                     target="_blank"
                   >
-                    Repository
+                    {t("projects.repo")}
                   </a>
                 </button>
                 {deployment ? (
@@ -97,7 +99,7 @@ const PROJECTS = [
                       href={deployment}
                       target="_blank"
                     >
-                      Deployment
+                      {t("projects.deployment")}
                     </a>
                   </button>
                 ) : null}
