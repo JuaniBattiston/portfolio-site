@@ -157,6 +157,9 @@ const t = useTranslations(lang);
               @click="navigationOpen = !navigationOpen">{t("nav.contact")}</a
             >
           </li>
+          <li class="py-6 flex flex-col items-center justify-center mx-auto">
+            <LanguagePicker lang={lang} />
+          </li>
         </ul>
       </div>
     </div>

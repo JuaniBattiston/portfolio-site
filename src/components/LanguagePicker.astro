@@ -1,72 +1,73 @@
 ---
 import { languages } from "../i18n/ui";
+import { getLangFromUrl } from "../i18n/utils";
+
+//add dictionary to relate en/es to a flag
+const langFlag: { [key: string]: string } = {
+  en: "🇺🇸",
+  es: "🇪🇸",
+  // Add more language flags as needed
+};
+
+const currentLang = getLangFromUrl(Astro.url);
+const currentFlag = langFlag[currentLang];
 ---
 
 <div class="flex justify-center">
   <div
-    x-data="{ open: false,
-              toggle() {
-                  if (this.open) {
-                      return this.close()
-                  }
-  
-                  this.$refs.button.focus()
-  
-                  this.open = true
-              },
-              close(focusAfter) {
-                  if (! this.open) return
-  
-                  this.open = false
-  
-                  focusAfter && focusAfter.focus()
-              }
-          }"
-    x-on:keydown.escape.prevent.stop="close($refs.button)"
-    x-on:focusin.window="! $refs.panel.contains($event.target) && close()"
+    x-data="{ dropdownOpen: false }"
+    x-init="dropdownOpen = false;"
+    x-cloak
+    x-on:keydown.escape.prevent.stop="dropdownOpen = false"
     x-id="['dropdown-button']"
     class="relative"
   >
-    <!-- Button -->
     <button
       x-ref="button"
-      x-on:click="toggle()"
-      :aria-expanded="open"
+      x-on:click="dropdownOpen = !dropdownOpen;"
+      :aria-expanded="dropdownOpen.toString()"
       :aria-controls="$id('dropdown-button')"
       type="button"
-      class="flex items-center gap-2 bg-white px-5 py-2.5 rounded-md shadow"
+      class="relative inline-flex items-center justify-center p-[0.150rem] overflow-hidden text-sm font-medium rounded-lg group bg-gradient-to-br gradient-tag text-blue-900 dark:text-white"
     >
-      Options
-
-      <!-- Heroicon: chevron-down -->
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        class="h-5 w-5 text-gray-400"
-        viewBox="0 0 20 20"
-        fill="currentColor"
+      <div
+        class="flex items-center justify-center w-auto h-auto py-2 px-2 bg-sky-100 dark:bg-slate-900 rounded-md"
       >
-        <path
-          fill-rule="evenodd"
-          d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-          clip-rule="evenodd"></path>
-      </svg>
+        <span class="pr-2 flex items-center justify-center">{currentFlag}</span>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-5 w-5 text-indigo-600 dark:text-cyan-300"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+            clip-rule="evenodd"></path>
+        </svg>
+      </div>
     </button>
-
-    <!-- Panel -->
     <div
       x-ref="panel"
-      x-show="open"
-      x-transition.origin.top.left
-      x-on:click.outside="close($refs.button)"
+      x-show="dropdownOpen"
+      x-transition:origin.top.left
+      x-on:click.away="dropdownOpen = false"
       :id="$id('dropdown-button')"
-      style="display: none;"
-      class="absolute left-0 mt-2 w-40 rounded-md bg-white shadow-md"
+      class="absolute left-0 mt-2 w-auto rounded-md bg-white dark:bg-slate-900 shadow-md"
     >
       <ul>
         {
           Object.entries(languages).map(([lang, label]) => (
             <li>
-              <a href={`/${lang}/`}>{label}</a>
+              <a
+                class="flex items-center justify-between w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 text-left text-sm text-blue-900 dark:text-white hover:bg-sky-100 dark:hover:bg-slate-950"
+                href={`/${lang}/`}
+              >
+                <div class="flex items-center gap-2">
+                  <span>{langFlag[lang] || lang}</span>
+                  <span>{label}</span>
+                </div>
+              </a>
             </li>
           ))
         }
