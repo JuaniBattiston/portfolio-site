@@ -4,9 +4,8 @@ import { getLangFromUrl } from "../i18n/utils";
 
 //add dictionary to relate en/es to a flag
 const langFlag: { [key: string]: string } = {
-  en: "🇺🇸",
-  es: "🇪🇸",
-  // Add more language flags as needed
+  en: "/us.svg",
+  es: "/ar.svg",
 };
 
 const currentLang = getLangFromUrl(Astro.url);
@@ -33,7 +32,13 @@ const currentFlag = langFlag[currentLang];
       <div
         class="flex items-center justify-center w-auto h-auto py-2 px-2 bg-sky-100 dark:bg-slate-900 rounded-md"
       >
-        <span class="pr-2 flex items-center justify-center">{currentFlag}</span>
+        <span class="pr-2 flex items-center justify-center">
+          <img
+            src={currentFlag ? currentFlag : langFlag[currentLang]}
+            alt="Language Icon"
+            class="w-5 h-5"
+          />
+        </span>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           class="h-5 w-5 text-indigo-600 dark:text-cyan-300"
@@ -64,7 +69,13 @@ const currentFlag = langFlag[currentLang];
                 href={`/${lang}/`}
               >
                 <div class="flex items-center gap-2">
-                  <span>{langFlag[lang] || lang}</span>
+                  <div class="w-5 h-5">
+                    <img
+                      src={langFlag[lang] || lang}
+                      alt="Language Icon"
+                      class="w-5 h-5"
+                    />
+                  </div>
                   <span>{label}</span>
                 </div>
               </a>

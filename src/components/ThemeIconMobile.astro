@@ -31,18 +31,14 @@ import Moon from "../../public/Moon.astro";
   .theme-toggle-icon-mobile {
     width: 1.25rem;
     height: 1.25rem;
-  }
-
-  .theme-toggle-icon-mobile {
-    transition: transform 0.3s ease-in-out;
+    transition:
+      transform 0.3s ease-in-out,
+      stroke 0.3s ease-in-out,
+      filter 0.3s ease-in-out;
   }
 
   .theme-toggle-icon-mobile:hover {
     transform: scale(1.2);
-  }
-
-  .theme-toggle-icon-mobile:not(:hover) {
-    transform: scale(1);
   }
 </style>
 
