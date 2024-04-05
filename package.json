@@ -19,6 +19,7 @@
     "@fontsource-variable/pixelify-sans": "^5.0.2",
     "@fontsource/lato": "^5.0.20",
     "@fontsource/poppins": "^5.0.12",
+    "@preline/dropdown": "^2.1.0",
     "@types/alpinejs": "^3.13.9",
     "alpinejs": "^3.13.7",
     "astro": "^4.5.2",
